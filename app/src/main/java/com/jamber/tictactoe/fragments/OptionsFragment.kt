@@ -1,9 +1,7 @@
 package com.jamber.tictactoe.fragments
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
@@ -26,16 +24,25 @@ class OptionsFragment : Fragment() {
         }
     }
 
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.options_menu, menu)
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
+        setHasOptionsMenu(true);
+
         val view = inflater.inflate(R.layout.options_fragment, container, false);
         newGameButton = view.findViewById(R.id.new_game);
 
         newGameButton?.setOnClickListener { startNewGame() }
+
+
 
         return view;
     }
