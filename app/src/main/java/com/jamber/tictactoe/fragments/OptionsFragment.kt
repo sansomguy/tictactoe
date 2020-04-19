@@ -47,6 +47,16 @@ class OptionsFragment : Fragment() {
         return view;
     }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId) {
+            R.id.menu_settings -> {
+                findNavController().navigate(OptionsFragmentDirections.actionOptionsFragmentToAppPreferencesFragment())
+                return true;
+            }
+        }
+        return true;
+    }
+
     private fun startNewGame() {
         findNavController().navigate(OptionsFragmentDirections.actionOptionsFragmentToGameSessionFragment())
     }

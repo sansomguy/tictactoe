@@ -16,6 +16,9 @@
             app:launchSingleTop="true"
             app:popUpTo="@id/optionsFragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_optionsFragment_to_appPreferencesFragment"
+            app:destination="@id/appPreferencesFragment" />
     </fragment>
     <fragment
         android:id="@+id/gameSessionFragment"
@@ -40,4 +43,8 @@
         android:id="@+id/registerFragment"
         android:name="com.jamber.tictactoe.fragments.RegisterFragment"
         android:label="RegisterFragment" />
+    <fragment
+        android:id="@+id/appPreferencesFragment"
+        android:name="com.jamber.tictactoe.fragments.AppPreferencesFragment"
+        android:label="AppPreferencesFragment" />
 </navigation>
